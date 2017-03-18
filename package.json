@@ -4,7 +4,8 @@
   "description": "Blog App to learn RESTful routes",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js" //when deploying to HEROKU this tells HEROKU uses this command to start the App
   },
   "author": "William Webb",
   "license": "ISC",
