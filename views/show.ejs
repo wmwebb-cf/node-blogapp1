@@ -1,0 +1,25 @@
+<% include partials/header %>
+
+<div class="ui main text container segment">
+  
+  <div class="ui centered huge header">
+    <%= blog.title %>
+  </div>
+  
+  <img class="ui centered image" id="showPicture" src="<%= blog.image %>">
+  
+  <h5><%= blog.created.toDateString() %></h5>
+  
+  
+  <div class="ui text segment"><%- blog.body %></div><!--using a dash(-) will allow the user enter html tags to format body text -->
+  
+  <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+    <a href="/blogs/<%= blog._id %>/edit" class="ui yellow basic button tiny "><i class="file text icon"></i>EDIT</a>
+    <button class="ui red basic button mini"><i class="remove icon"></i>DELETE</button>
+  </form><br>
+  <a href="/blogs" class="ui blue basic button mini"><i class="chevron left icon"></i>Go Back</a>
+  
+  
+</div>
+
+<% include partials/footer %>
