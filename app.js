@@ -22,9 +22,10 @@ app.use(expressSanitizer());
 //use method-override for PUT and DELETE requests
 app.use(methodOverride("_method"));
 
+var url = process.env.DATABASEURL || "mongodb://localhost/restful_blogapp"; //sets VAR so that if the ENVIRONMENT VARIABLE gets corrupted, it will default to the string
 
-//mongoose.connect("mongodb://localhost/restful_blogapp");
-mongoose.connect("mongodb://webbdevvue:pass1111@ds137100.mlab.com:37100/node-blog");
+mongoose.connect(url); //development DB that uses ENVIRONMENT VARIABLE
+//mongoose.connect("mongodb://username:pw@ds137100.mlab.com:37100/node-blog"); //PRODUCTION DB on mongolab
 
 var blogSchema = new mongoose.Schema({
   title: String,
