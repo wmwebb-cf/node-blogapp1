@@ -23,7 +23,8 @@ app.use(expressSanitizer());
 app.use(methodOverride("_method"));
 
 
-mongoose.connect("mongodb://localhost/restful_blogapp");
+//mongoose.connect("mongodb://localhost/restful_blogapp");
+mongoose.connect("mongodb://webbdevvue:pass1111@ds137100.mlab.com:37100/node-blog");
 
 var blogSchema = new mongoose.Schema({
   title: String,
